@@ -12,7 +12,7 @@ import styles from './styles.module.scss';
 const Navbar = ({ navbarInfo }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   
-  const navbarItems = [navbarInfo?.metadata?.about, navbarInfo?.metadata?.contact, navbarInfo?.metadata?.home, navbarInfo?.metadata?.menu];
+  const navbarItems = ['Home', 'Contact', 'About', 'Menu'];
 
   const handleToggle = () => {
     setToggleMenu( prev => !prev );
@@ -23,7 +23,7 @@ const Navbar = ({ navbarInfo }) => {
       <Link href='/#home' passHref>
         <div className={styles.navbar_logo}>
           <Image
-            src={navbarInfo?.metadata?.logo?.imgix_url || images?.gericht}
+           src="/"
             layout='fill'
             objectFit='cover'
             alt='logo' />

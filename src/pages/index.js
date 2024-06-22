@@ -9,10 +9,31 @@ import VideoIntro from 'components/VideoIntro';
 import Gallery from 'components/Gallery';
 import Contacts from 'components/Contact';
 
-import { getDataFromBucket } from 'lib/api';
-import chooseByType from 'utils/chooseValueByType';
+// Dummy data
+const dummyData = {
+  navigation: ["Home","Contact","About","Menu"],
+  header: { /* dummy header data */ },
+  about: { /* dummy about us data */ },
+  drink: { /* dummy drink menu data */ },
+  food: { /* dummy food menu data */ },
+  history: { /* dummy history data */ },
+  gallery: { /* dummy gallery data */ },
+  video: "/video.mp4",
+  contact: { /* dummy contact data */ },
+};
 
 function Template({ data }) {
+  // Use dummy data directly
+  const navigation = dummyData.navigation;
+  const header = dummyData.header;
+  const about = dummyData.about;
+  const drink = dummyData.drink;
+  const food = dummyData.food;
+  const history = dummyData.history;
+  const gallery = dummyData.gallery;
+  const video = dummyData.video;
+  const contact = dummyData.contact;
+
   return (
     <>
       <Head>
@@ -20,23 +41,23 @@ function Template({ data }) {
         <meta name="description" content="Create template using cosmic.js CMS" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout navbar={chooseByType(data, 'navigation')}>
-        <Home info={chooseByType(data, 'header')}/>
-        <AboutUs info={chooseByType(data, 'about')}/>
-        <SpacialMenu info={[chooseByType(data, 'drink'), chooseByType(data, 'food')]}/>
-        <Introduction info={chooseByType(data, 'history')}/>
-        <Gallery info={[chooseByType(data, 'gallery'), chooseByType(data, 'food')]}/>
+      <Layout navbar={navigation}>
+        <Home info={header}/>
+        <AboutUs info={about}/>
+        <SpacialMenu info={[drink, food]}/>
+        <Introduction info={history}/>
+        <Gallery info={[gallery, food]}/>
       </Layout>
       <Footer>
-        <VideoIntro url={chooseByType(data, 'video')}/>
-        <Contacts info={chooseByType(data, 'contact')}/>
+        <VideoIntro url="video.mp4"/>
+        <Contacts info={contact}/>
       </Footer>
     </>
   )
 }
 
 export async function getStaticProps({ preview }) {
-  const data = (await getDataFromBucket(preview)) || [];
+  const data =  [];
   return {
     props: { data },
   }

@@ -36,14 +36,14 @@ function Menu({ data }) {
 }
 
 export async function getStaticProps({ params, preview = null }) {
-  const data = (await getDataFromBucket(preview)) || [];
+  const data =  [];
   return {
     props: { data },
   }
 }
 
 export async function getStaticPaths() {
-  const dataWithSlug = (await getAllDataWithSlug()) || [];
+  const dataWithSlug = [];
   
   return {
     paths: dataWithSlug.map((menu) => `/menu/${menu.slug}`),

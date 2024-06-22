@@ -30,7 +30,7 @@ const VideoIntro = ({url}) => {
         controls={false}
         muted
       >
-        <source src={url?.metadata?.video?.imgix_url} type="video/mp4" />
+        <source src="/video.mp4" type="video/mp4" />
       </video>
       <div className={cn(styles.video_overlay, 'flex_center')}>
         <button

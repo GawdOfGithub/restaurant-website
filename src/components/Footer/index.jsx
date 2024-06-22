@@ -7,7 +7,7 @@ const Footer = ({children}) => (
     <footer className={styles.footer}>
       {children}
       <Link
-        href={`https://www.cosmicjs.com?ref=next-restaurant-cms`}
+        href="/"
         passHref
       >
         <a
@@ -18,7 +18,7 @@ const Footer = ({children}) => (
               Powered by{' '}
             </p>
             <span className={styles.footer_logo}>
-              <Image src='/cosmic.svg' objectFit='contain' alt="Cosmic Logo" width={90} height={40} />
+            weserveyou.live
             </span> 
           </div>
         </a>

@@ -8,6 +8,27 @@ import SubHeading from 'components/SubHeading';
 import Button from 'components/Button';
 
 import styles from './styles.module.scss';
+const data =[ {
+  title: 'Item1',
+  price: 100,
+  picture:"/land.avif",
+  slug:"Item1"
+},
+{
+  title: 'Item1',
+  price: 100,
+  picture:"/land.avif",
+  slug:"Item1"
+},
+{
+  title: 'Item1',
+  price: 100,
+  picture:"/land.avif",
+  slug:"Item1"
+},
+
+]
+
 
 const Gallery = ({info}) => {
   const scrollRef = useRef( null );
@@ -25,18 +46,18 @@ const Gallery = ({info}) => {
   return (
     <div className={cn(styles.gallery_container, 'flex_center')} id='gallery'>
       <div className={styles.gallery_content}>
-        <SubHeading title={info?.[0]?.metadata?.section} />
-        <h1 className='headtext_cormorant'>{info?.[0]?.metadata?.title}</h1>
-        <p className={cn(styles.gallery_content_intro, 'opensans')}>{info?.[0]?.metadata?.intro}</p>
+        <SubHeading title="Menu Gallery" />
+        <h1 className='headtext_cormorant'>Chose Your Favorite Dish</h1>
+        <p className={cn(styles.gallery_content_intro, 'opensans')}></p>
         <Button name='View More' path='#menu' />
       </div>
       <div className={styles.gallery_images}>
         <div className={styles.gallery_images_container} ref={scrollRef}>
-          {info?.[1]?.metadata?.menu?.map(({title, slug, price, picture}, index ) => (
+          {data.map(({title, slug, price, picture}, index ) => (
             <Link key={index} href={info ? `/menu/${slug}?#menu-intro` : '/#gallery'} passHref>
               <a>
                 <div className={cn(styles.gallery_images_card, 'flex_center' )} key={index}>
-                  <Image src={picture?.imgix_url} layout='fill' objectFit='cover' alt='gallery_image' />
+                  <Image src={picture} layout='fill' objectFit='cover' alt='gallery_image' />
                   <div className={styles.gallery_image_icon}>
                     <BsInstagram />
                     <h3>{title}</h3>

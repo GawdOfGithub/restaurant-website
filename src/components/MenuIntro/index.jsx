@@ -16,7 +16,7 @@ const MenuIntro = ({ info, slug }) => {
         <div className={cn('app_wrapper_img','app_wrapper_img_reverse')}>
           <div className={cn(styles.wrapper_img, 'img_padding')} >
             <Image
-              src={chooseMenuItem?.picture?.imgix_url || images?.chef}
+             src="/lemon.avif"
               alt='intro_image'
               objectFit='cover'
               width={450}
@@ -26,14 +26,14 @@ const MenuIntro = ({ info, slug }) => {
         </div>
         <div className={cn(styles.wrapper_content,'app_wrapper_info')}>
           <SubHeading title='Try it!' />
-          <h1 className='headtext_cormorant'>{chooseMenuItem?.title}</h1>
+          <h1 className='headtext_cormorant'>Insert some data1</h1>
           <div className={styles.intro_content}>
             <div>
-              <p className={styles.intro_tag}>{chooseMenuItem?.tags}</p>
-              <p className='opensans'>{chooseMenuItem?.price}</p>
+              <p className={styles.intro_tag}>Insert some data here</p>
+              <p className='opensans'>data3</p>
             </div>
             <div className={styles.intro_content_quote}>
-              <p className='opensans'>{chooseMenuItem?.intro}</p>
+              <p className='opensans'>data4</p>
             </div>
           </div>
         </div>

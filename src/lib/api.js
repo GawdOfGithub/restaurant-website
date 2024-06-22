@@ -15,7 +15,7 @@ export async function getAllDataWithSlug() {
     type: 'menu',
     props: 'slug',
   }
-  const data = await bucket.getObjects(params)
+  const data = []
   return data.objects
 }
 
@@ -26,6 +26,6 @@ export async function getDataFromBucket(preview) {
     sort: '-created_at',
     ...(preview && { status: 'all' }),
   }
-  const data = await bucket.getObjects(params)
+  const data = []
   return data.objects
 }
